@@ -14,10 +14,14 @@ Verified locally during implementation on macOS, Python 3.13.2 and Node 20.7.0:
 
 ## Pending external validation
 
-Tavily and Groq credentials are not present in the local environment. Real search/extraction/generation has **not** been exercised. Add `TAVILY_API_KEY` and `GROQ_API_KEY` to a local `.env`, then run `.venv/bin/python scripts/live_smoke.py`. Contract fixtures do not validate real account limits, auth, provider availability, or answer quality.
+Rechecked September 30, 2026: the private `.env` exists and is git-ignored, but both provider keys are empty and effective application settings are not live-ready. Real search/extraction/generation and the real Live browser flow have **not** been exercised. Fill `TAVILY_API_KEY` and `GROQ_API_KEY` in the existing local `.env`, then run `.venv/bin/python scripts/live_smoke.py`. Restart the interactive server and verify a Live RAG answer and its clickable evidence in the browser. Contract fixtures do not validate real account limits, auth, provider availability, or answer quality.
 
 No Grafana Cloud credentials were present. Local trace creation, error status, correlation, content redaction, and all three OTLP signal transports are tested; delivery to a live Grafana backend and dashboard metric-name compatibility require the optional setup in `observability.md`. No hosted deployment was attempted and no paid plan was enabled.
+
+On September 30, Docker was installed but its daemon was unavailable, so the optional real local Grafana check was not run.
 
 The current Starlette version emits a TestClient/httpx deprecation warning; tests pass. This is a test-adapter migration concern, not a runtime failure.
 
 GitHub workflow authorization is configured. The active workflow is `.github/workflows/ci.yml`; it runs the offline verification suite on pushes and pull requests. Live provider checks remain opt-in and require local credentials.
+
+CI now uses Node 24 action releases (checkout 7.0.1, setup-python 7.0.0, setup-node 7.0.0), Node 24 for the frontend build, and Ubuntu 24.04 to avoid an implicit runner-image migration. Checkout does not retain credentials. Playwright owns a separate offline server on port 8001 and explicitly clears provider credentials and telemetry export settings; it never reuses the interactive server.

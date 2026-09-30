@@ -8,7 +8,7 @@ Read one text document, article, or selectable-text PDF. Select a passage, ask a
 
 ## Run locally
 
-Requires Python 3.11–3.13 and Node 20+. No provider accounts or keys are needed for Demo.
+Requires Python 3.11–3.13 and Node 20+ (Node 24 recommended and tested in CI). No provider accounts or keys are needed for Demo.
 
 ```sh
 git clone https://github.com/flyoungiv/passage-scout.git
@@ -64,7 +64,7 @@ npx playwright install chromium
 npm test
 ```
 
-The [CI workflow](.github/workflows/ci.yml) runs Python tests, static checks, fixed retrieval evaluation, a production frontend build, and Chromium browser tests. Provider tests use contract fixtures and do not prove real account access. After adding local keys, run `python scripts/live_smoke.py` from the repository root for an actual provider request (consumes credits/tokens). It prints only mode, citation count, and provider status, not the question or response text.
+The [CI workflow](.github/workflows/ci.yml) runs Python tests, static checks, fixed retrieval evaluation, a production frontend build, and Chromium browser tests. Browser tests always start their own offline server on port 8001 with provider keys, access tokens, and telemetry export disabled, even if your local `.env` enables them. Keep port 8001 free; your interactive server can keep running on port 8000. Provider tests use contract fixtures and do not prove real account access. After adding local keys, run `python scripts/live_smoke.py` from the repository root for an actual provider request (consumes credits/tokens). It prints only mode, citation count, and provider status, not the question or response text.
 
 ## Learn the design
 
