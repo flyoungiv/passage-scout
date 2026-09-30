@@ -64,7 +64,7 @@ npx playwright install chromium
 npm test
 ```
 
-The prepared [CI workflow](docs/ci-workflow.yml) runs Python tests, static checks, fixed retrieval evaluation, a production frontend build, and Chromium browser tests. Publishing it to `.github/workflows/ci.yml` is pending GitHub workflow permission. Provider tests use contract fixtures and do not prove real account access. After adding local keys, run `python scripts/live_smoke.py` from the repository root for an actual provider request (consumes credits/tokens). It prints only mode, citation count, and provider status, not the question or response text.
+The [CI workflow](.github/workflows/ci.yml) runs Python tests, static checks, fixed retrieval evaluation, a production frontend build, and Chromium browser tests. Provider tests use contract fixtures and do not prove real account access. After adding local keys, run `python scripts/live_smoke.py` from the repository root for an actual provider request (consumes credits/tokens). It prints only mode, citation count, and provider status, not the question or response text.
 
 ## Learn the design
 

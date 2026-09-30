@@ -20,4 +20,4 @@ No Grafana Cloud credentials were present. Local trace creation, error status, c
 
 The current Starlette version emits a TestClient/httpx deprecation warning; tests pass. This is a test-adapter migration concern, not a runtime failure.
 
-GitHub CI publication is blocked by the authenticated token’s missing `workflow` scope. The complete workflow is preserved as `docs/ci-workflow.yml`; it is not active and no GitHub Actions result is claimed. The local `ci-ready` branch also preserves the originally prepared workflow commit.
+GitHub workflow authorization is configured. The active workflow is `.github/workflows/ci.yml`; it runs the offline verification suite on pushes and pull requests. Live provider checks remain opt-in and require local credentials.
