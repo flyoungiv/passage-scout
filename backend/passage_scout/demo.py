@@ -19,27 +19,40 @@ QUESTIONS = [
     "How do trees cool cities?",
     "What affects how much cooling a tree provides?",
 ]
-EVIDENCE = [{
-    "id": 1,
-    "title": "EPA: Using Trees and Vegetation to Reduce Heat Islands",
-    "url": "https://www.epa.gov/heatislands/using-trees-and-vegetation-reduce-heat-islands",
-    "passage": "Prepared paraphrase: Trees cool surroundings through shade and evapotranspiration; placement and plant characteristics influence their benefits.",
-    "score": 1.0,
-}]
+EVIDENCE = [
+    {
+        "id": 1,
+        "title": "EPA: Benefits of Trees and Vegetation",
+        "url": "https://www.epa.gov/heatislands/benefits-trees-and-vegetation",
+        "passage": "Prepared paraphrase: Trees cool surroundings through shade and evapotranspiration; placement and plant characteristics influence their benefits.",
+        "score": 1.0,
+    }
+]
 
 
 def answer(question: str, document: str) -> dict:
     if document == SAMPLE and question in QUESTIONS:
-        body = ("Trees cool cities through shade, which blocks incoming solar energy, and "
-                "evapotranspiration, which uses heat as water evaporates from leaves. [1]")
+        body = (
+            "Trees cool cities through shade, which blocks incoming solar energy, and "
+            "evapotranspiration, which uses heat as water evaporates from leaves. [1]"
+        )
         if question == QUESTIONS[1]:
-            body = ("Cooling depends on tree characteristics and placement. Water availability "
-                    "and ongoing care also matter, as the sample explains. EPA guidance describes "
-                    "shade and evapotranspiration as the two cooling mechanisms. [1]")
-        return {"mode": "demo", "label": "Prepared demo • no external calls",
-                "answer": body, "citations": EVIDENCE}
-    return {"mode": "demo", "label": "Illustrative demo • not document-grounded",
-            "answer": "This is an illustrative response showing where an answer would appear. "
-                      "I have not analyzed or verified this document. Switch to Live RAG to search "
-                      "the web and generate an evidence-backed answer, or use a prepared sample question.",
-            "citations": []}
+            body = (
+                "Cooling depends on tree characteristics and placement. Water availability "
+                "and ongoing care also matter, as the sample explains. EPA guidance describes "
+                "shade and evapotranspiration as the two cooling mechanisms. [1]"
+            )
+        return {
+            "mode": "demo",
+            "label": "Prepared demo • no external calls",
+            "answer": body,
+            "citations": EVIDENCE,
+        }
+    return {
+        "mode": "demo",
+        "label": "Illustrative demo • not document-grounded",
+        "answer": "This is an illustrative response showing where an answer would appear. "
+        "I have not analyzed or verified this document. Switch to Live RAG to search "
+        "the web and generate an evidence-backed answer, or use a prepared sample question.",
+        "citations": [],
+    }

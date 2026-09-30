@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     tavily_api_key: SecretStr = SecretStr("")
     groq_api_key: SecretStr = SecretStr("")
     groq_model: str = "openai/gpt-oss-20b"
+    allowed_hosts: list[str] = ["localhost", "127.0.0.1", "[::1]"]
     live_access_token: SecretStr = SecretStr("")
     tavily_monthly_credits: int = Field(1000, gt=0)
     groq_requests_per_minute: int = Field(30, gt=0)
