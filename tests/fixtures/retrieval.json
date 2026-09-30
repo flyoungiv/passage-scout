@@ -1,0 +1,47 @@
+[
+  {
+    "id": "trees-cooling",
+    "question": "How do trees cool cities through shade and evapotranspiration?",
+    "expected_url": "https://www.epa.gov/heatislands/benefits-trees-and-vegetation",
+    "sources": [
+      {
+        "url": "https://www.epa.gov/heatislands/benefits-trees-and-vegetation",
+        "raw_content": "Original fixture paraphrase: Trees cool cities by shading surfaces and evapotranspiration, the movement and evaporation of water from leaves."
+      },
+      {
+        "url": "https://docs.python.org/3/tutorial/datastructures.html",
+        "raw_content": "Original fixture paraphrase: Python dictionaries map keys to values. Lists provide ordered collections of items."
+      }
+    ]
+  },
+  {
+    "id": "trace-correlation",
+    "question": "How does a trace relate parent spans to child spans?",
+    "expected_url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+    "sources": [
+      {
+        "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+        "raw_content": "Original fixture paraphrase: A trace records work across a request. Spans identify individual operations, with child spans related to a parent span through context."
+      },
+      {
+        "url": "https://www.epa.gov/heatislands/benefits-trees-and-vegetation",
+        "raw_content": "Original fixture paraphrase: Tree shade and water evaporation reduce heat in urban areas and surrounding surfaces."
+      }
+    ]
+  },
+  {
+    "id": "groq-windows",
+    "question": "Which rate limit headers refer to requests per day and tokens per minute?",
+    "expected_url": "https://console.groq.com/docs/rate-limits",
+    "sources": [
+      {
+        "url": "https://console.groq.com/docs/rate-limits",
+        "raw_content": "Original fixture paraphrase: Rate limit response headers for requests refer to requests per day. Token limit headers refer to tokens per minute; remaining values are snapshots."
+      },
+      {
+        "url": "https://docs.python.org/3/tutorial/datastructures.html",
+        "raw_content": "Original fixture paraphrase: Lists can be modified by appending and removing items. Dictionaries associate keys with values."
+      }
+    ]
+  }
+]
